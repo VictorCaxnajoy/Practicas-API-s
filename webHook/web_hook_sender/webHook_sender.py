@@ -25,6 +25,7 @@ def newUser(urlDestino:str, EnvioTotalVeces:int, intervaloSegundos: int):
                 "name": "Victor",
                 "ap_paterno" : "Alva",
                 "email" : "victor@gmail.com",
+                "url_user": "https://webhook.site/5d7f9e23-14e8-448b-9beb-516304c0bcc9",
                 "timestamp": datetime.datetime.now().isoformat(),
                 "numero_envio": contador
             }

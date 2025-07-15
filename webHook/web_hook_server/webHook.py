@@ -7,4 +7,4 @@ app = FastAPI()
 
 @app.post("/webhook")
 def newUser(user: user_schema):
-    response = requests.post("https://webhook.site/5d7f9e23-14e8-448b-9beb-516304c0bcc9", data=json.dumps(payload), headers={'Content-Type' : 'application/json'})
+    response = requests.post(user.url_user, data=json.dumps(user), headers={'Content-Type' : 'application/json'})
