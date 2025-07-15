@@ -6,9 +6,12 @@ import datetime
 
 app = FastAPI()
 
+@app.get("/root")
+def home():
+    return "Hi"
 
 @app.post("/newUser")
-def newUser(urlDestino:str, EnvioTotalVeces:int, intervaloSegundos: int):
+def newUser(urlDestino:str, EnvioTotalVeces:int, intervaloSegundos: int, url_user: str):
 
     # webHook sending
     print(f" Iniciando envío de webhooks cada {intervaloSegundos} segundos...")
@@ -25,7 +28,7 @@ def newUser(urlDestino:str, EnvioTotalVeces:int, intervaloSegundos: int):
                 "name": "Victor",
                 "ap_paterno" : "Alva",
                 "email" : "victor@gmail.com",
-                "url_user": "https://webhook.site/5d7f9e23-14e8-448b-9beb-516304c0bcc9",
+                "url_user": url_user,
                 "timestamp": datetime.datetime.now().isoformat(),
                 "numero_envio": contador
             }
